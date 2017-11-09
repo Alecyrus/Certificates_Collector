@@ -11,7 +11,7 @@ from datetime import datetime
 from socket import socket
 
 
-DEFAULT_TIME = 30
+DEFAULT_TIME = 5
 DEFAULT_PORT = 443
 
 app = Sanic()

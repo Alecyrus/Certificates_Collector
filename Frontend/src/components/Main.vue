@@ -1,18 +1,18 @@
 <template>
   <div >
-  <div >
-            <vue-particles class="background"  shapeType="circle" :particleOpacity="0.4" :particlesNumber="100" linesColor="#85004B" color="#85004B"></vue-particles>
-          </div>
-  
+    <div >
+      <vue-particles class="background"  shapeType="circle" :particleOpacity="0.4" :particlesNumber="100" linesColor="#85004B" color="#85004B"></vue-particles>
+    </div>
+
     <Affix>
       <Menu style="opacity:0.8;box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, .05), 0px 0px 8px 0px rgba(0, 0, 0, .04);" ref="mainMenu" mode="horizontal" theme="light" :active-name="activeMenu" @on-select="handleMenuSelect">
         <div class="layout-logo"></div>
         <div class="layout-nav">
-          <MenuItem name="2">                   
-            使用说明
+          <MenuItem name="/">                   
+            首页
           </MenuItem>
-          <MenuItem name="3">
-            关于
+          <MenuItem name="/certificatescollector">
+            最新采集结果
           </MenuItem>
         </div>
       </Menu>
@@ -38,21 +38,7 @@
     },
     methods: {
       handleMenuSelect() {
-        console.log(arguments[0]);
-        this.$Message.error({
-          content: '功能暂未开放',
-          duration: 3,
-          closable: true
-        });
-        if (this.activeMenu === 2) {
-            this.activeMenu=3;
-          }
-          else {
-            this.activeMenu = 2;
-          }
-        this.$nextTick(()=>{
-          this.$refs['mainMenu'].updateActiveName();
-        });
+         this.$router.push(arguments[0]);
       }
 
     }
