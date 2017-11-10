@@ -15,6 +15,8 @@ DEFAULT_TIME = 5
 DEFAULT_PORT = 443
 
 app = Sanic()
+app.config.REQUEST_TIMEOUT = 4
+
 
 def b2s(b):
     return str(b, encoding = "utf-8")
@@ -117,5 +119,5 @@ async def test(request):
         })
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8182, workers=4)
+    app.run(host="0.0.0.0", port=8182, workers=4,request_timeout=)
 
