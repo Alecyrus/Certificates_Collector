@@ -58,6 +58,7 @@ export default {
   methods: {
     handleSubmit(name) {
       this.$Loading.start();
+      this.$request.defaults.timeout=4000;
       this.$refs[name].validate((valid) => {
         if (valid) {
           this.$Message.loading('开始采集');
@@ -81,7 +82,7 @@ export default {
 
           })
           .catch((error) => {
-            this.$Message.error('请检查输入是否正确');
+            this.$Message.error('采集为空，目标服务器未提供服务器证书');
             console.log(error);
             this.$Loading.error();
           });

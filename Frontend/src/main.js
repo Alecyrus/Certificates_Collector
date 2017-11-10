@@ -15,7 +15,7 @@ Vue.use(VueParticles)
 Vue.use(iView);
 Vue.prototype.$request = axios;
 Vue.use(VueLocalStorage);
-
+Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
