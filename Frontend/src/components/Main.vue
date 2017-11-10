@@ -25,6 +25,7 @@
         <router-view></router-view>
       </transition>
     </div>
+    <BackTop></BackTop>
   </div>
 </template>
 
