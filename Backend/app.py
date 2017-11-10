@@ -31,7 +31,7 @@ def get_extentions(cert):
     for i in range(index):
         try:
             if b2s(cert.get_extension(i).get_short_name()) != "UNDEF":
-                exts[b2s(cert.get_extension(i).get_short_name())] = cert.get_extension(i).__str__()
+                exts[b2s(cert.get_extension(i).get_short_name())] = cert.get_extension(i).__str__().replace('\n', '<br>')
         except Exception as e:
             pass
     return exts
